@@ -1,0 +1,15 @@
+mock_interview_v1.0
+├── README.md                         项目说明、创新点、架构、配置和测试流程
+├── firmware
+│   ├── build\agent_link.bin         ESP32-S3 可烧录固件
+│   ├── flash\flash_args             esptool/ESP-IDF 烧录参数
+│   └── source                        关键 ESP-IDF 源码
+├── host-python
+│   ├── host.py                       本地 Agent Host
+│   └── .env.example                  脱敏配置模板
+└── web
+    ├── agent.js                      Web Bluetooth、状态机、总结编排
+    ├── index.html                    网页界面
+    └── style.css                     网页样式
+
+未包含：真实 .env/API 密钥、build 中间目录、managed_components 第三方依赖缓存、旧版本 v0.1。

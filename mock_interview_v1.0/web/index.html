@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>模拟面试 Agent</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+  <header class="topbar">
+    <div><p class="eyebrow">ROROLEE / AGENT HOST</p><h1>模拟面试</h1><p class="subtitle">语音驱动的实时面试练习</p></div>
+    <div class="connection"><span class="status-dot"></span><span id="status">未连接</span></div>
+  </header>
+  <div class="toolbar connect-bar"><button id="connect">连接 AI_ASSISTANT</button><span class="connection-note">连接后使用硬件 BOOT 进行录音</span></div>
+  <div class="layout">
+    <section class="panel session-panel"><div class="panel-head"><div><p class="eyebrow">SESSION</p><h2>面试进程</h2></div><span class="live-badge">LIVE</span></div>
+      <div class="state-line"><span class="state-pulse"></span><p id="state">等待连接</p></div>
+      <div class="question-box"><p class="eyebrow">CURRENT QUESTION</p><p id="question">连接后按住硬件 BOOT 说出面试主题。</p></div>
+    </section>
+    <section class="panel setup-panel"><div class="panel-head"><div><p class="eyebrow">INPUT</p><h2>面试设置</h2></div></div>
+      <label for="topic">面试主题</label><input id="topic" placeholder="例如：Java 后端开发">
+      <label for="transcript">语音转写</label><textarea id="transcript" rows="4" placeholder="识别到的内容会显示在这里"></textarea>
+      <div class="toolbar actions"><button id="listen" class="secondary">开始语音识别</button><button id="generate">生成问题</button></div>
+    </section>
+    <section class="panel result-panel"><div class="panel-head"><div><p class="eyebrow">FEEDBACK</p><h2>回答评估</h2></div><span class="result-meta">DeepSeek</span></div><pre id="result">完成整场面试后，这里会显示综合分析。</pre><pre id="finalSummary">最终综合分析将在最后一题回答完成后生成。</pre></section>
+    <section class="panel camera-panel"><div class="panel-head"><div><p class="eyebrow">PRESENCE</p><h2>表情与肢体</h2></div><span class="result-meta">VISION</span></div>
+      <video id="cameraPreview" autoplay muted playsinline></video><img id="hardwareFrame" alt="硬件摄像头画面">
+      <div class="toolbar actions"><button id="cameraStart" class="secondary">开启摄像头</button><button id="cameraAnalyze">开始分析</button></div>
+      <p id="cameraState" class="camera-state">未开启摄像头</p><pre id="cameraResult">分析结果会显示在这里。</pre>
+    </section>
+  </div>
+  <footer><span>云端 ASR · DeepSeek · 云端 TTS</span><span>硬件音频链路：0xFFA1 → 0xFFA2</span></footer>
+</main><script src="agent.js"></script></body></html>
